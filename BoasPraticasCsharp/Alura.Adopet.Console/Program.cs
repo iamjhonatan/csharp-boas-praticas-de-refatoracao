@@ -11,38 +11,10 @@ try
     switch (args[0].Trim())
     {
         case "import":
-            List<Pet> listaDePet = new List<Pet>();
-
-            // args[1] é o caminho do arquivo a ser importado
-            using (StreamReader sr = new StreamReader(args[1]))
-            {
-                while (!sr.EndOfStream)
-                {
-                    // separa linha usando ponto e vírgula
-                    string[] propriedades = sr.ReadLine().Split(';');
-                    // cria objeto Pet a partir da separação
-                    Pet pet = new Pet(Guid.Parse(propriedades[0]),
-                      propriedades[1],
-                      TipoPet.Cachorro
-                     );
-
-                    Console.WriteLine(pet);
-                    listaDePet.Add(pet);
-                }
-            }
-            foreach (var pet in listaDePet)
-            {
-                try
-                {
-                    var resposta = await CreatePetAsync(pet);
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine(ex.Message);
-                }
-            }
-            Console.WriteLine("Importação concluída!");
+            var import = new Import();
+            await import.ImportacaoArquivoPetAsync(caminhoDoArquivoDeImportacao:args[1]);
             break;
+
         case "help":
             Console.WriteLine("Lista de comandos.");
             // se não passou mais nenhum argumento mostra help de todos os comandos
