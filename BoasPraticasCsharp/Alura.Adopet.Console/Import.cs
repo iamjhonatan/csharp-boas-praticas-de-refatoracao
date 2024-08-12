@@ -5,6 +5,8 @@ using System.Net.Http.Json;
 
 namespace Alura.Adopet.Console
 {
+    [DocComand(instrucao:"import", 
+               documentacao: "adopet import <arquivo> comando que realiza a importação do arquivo de pets.")]
     public class Import
     {
         HttpClient client;

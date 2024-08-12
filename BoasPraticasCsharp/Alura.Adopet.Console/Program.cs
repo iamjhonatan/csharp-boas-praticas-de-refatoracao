@@ -39,7 +39,7 @@ try
                 }
                 if (args[1].Equals("show"))
                 {
-                    Console.WriteLine(" adopet show <arquivo>  comando que " +
+                    Console.WriteLine($" adopet show <arquivo>  comando que " +
                         "exibe no terminal o conteúdo do arquivo importado.");
                 }
             }
