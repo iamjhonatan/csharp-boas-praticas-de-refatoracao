@@ -1,11 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Net.Http.Headers;
+﻿using System.Net.Http.Headers;
 using System.Net.Http.Json;
+using Alura.Adopet.Console.Modelos;
+using Alura.Adopet.Console.Util;
 
-namespace Alura.Adopet.Console
+namespace Alura.Adopet.Console.Comandos
 {
-    [DocComand(instrucao:"import", 
+    [DocComand(instrucao: "import",
                documentacao: "adopet import <arquivo> comando que realiza a importação do arquivo de pets.")]
     public class Import
     {
